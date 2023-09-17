@@ -3,6 +3,8 @@ import boto3, configparser, os, botocore, json
 from bs4 import BeautifulSoup
 from datetime import datetime
 
+# Fill with your own access and secret key locally
+# See https://www.msp360.com/resources/blog/how-to-find-your-aws-access-key-id-and-secret-access-key/
 s3resource = None
 ACCESS_KEY = ''
 SECRET_KEY = ''
@@ -20,8 +22,8 @@ def setup():
     global s3resource
     s3resource = boto3.resource(
         's3',  # the AWS resource we want to use
-        aws_access_key_id='AKIAWXMU5QCVSVBSNRAJ',
-        aws_secret_access_key='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',
+        aws_access_key_id=ACCESS_KEY,
+        aws_secret_access_key=SECRET_KEY,
         region_name='us-east-1'  # same region arxiv bucket is in
     )
 
